@@ -21,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://fathomless-reaches-91576.herokuapp.com/parse"
             })
         )
+        if PFUser.current() != nil{
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let feedNavigationController = main.instantiateViewController(withIdentifier: "FeedNavigationController")
+            
+            window?.rootViewController = feedNavigationController
+            
+        }
         // Override point for customization after application launch.
         return true
     }
